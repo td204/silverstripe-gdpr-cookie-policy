@@ -24,7 +24,6 @@
         "tractorcow/silverstripe-colorpicker": "~4.1.0"
     },
     "extra": {
-        "installer-name": "cookiepolicy",
         "expose": [
             "javascript"
         ]
