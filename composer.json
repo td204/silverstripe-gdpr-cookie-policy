@@ -23,9 +23,6 @@
         "silverstripe/framework": "~4.0",
         "tractorcow/silverstripe-colorpicker": "~4.1.0"
     },
-    "extra": {
-        "installer-name": "cookiepolicy"
-    },
     "config": {
         "allow-plugins": {
             "composer/installers": true,
