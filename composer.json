@@ -19,7 +19,7 @@
     "require": {
         "ext-json": "*",
         "silverstripe/cms": "~4.0",
-        "silverstripe/display-logic": "2.0.*",
+        "silverstripe/display-logic": "~2.0",
         "silverstripe/framework": "~4.0",
         "tractorcow/silverstripe-colorpicker": "~4.1.0"
     },
