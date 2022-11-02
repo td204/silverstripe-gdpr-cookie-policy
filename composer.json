@@ -17,12 +17,19 @@
         "issues": "https://github.com/novatio/silverstripe-gdpr-cookie-policy/issues"
     },
     "require": {
+        "ext-json": "*",
         "silverstripe/cms": "~4.0",
+        "silverstripe/display-logic": "2.0.*",
         "silverstripe/framework": "~4.0",
-        "tractorcow/silverstripe-colorpicker": "~4.1.0",
-        "silverstripe/display-logic": "2.0.*"
+        "tractorcow/silverstripe-colorpicker": "~4.1.0"
     },
     "extra": {
         "installer-name": "cookiepolicy"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/vendor-plugin": true
+        }
     }
 }

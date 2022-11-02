@@ -1,5 +1,19 @@
 <?php
 
+namespace Novatio\CookiePolicy;
+
+use Exception;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\FieldGroup;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Forms\Tab;
+use SilverStripe\Forms\TextField;
+use SilverStripe\ORM\DataExtension;
+use TractorCow\Colorpicker\Forms\ColorField;
+
 class SiteConfigCookiePolicy extends DataExtension
 {
     /**

@@ -1,5 +1,16 @@
 <?php
 
+namespace Novatio\CookiePolicy;
+
+use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\Control\Cookie;
+use SilverStripe\Core\Extension;
+use SilverStripe\SiteConfig\SiteConfig;
+use SilverStripe\View\ArrayData;
+use SilverStripe\View\Parsers\ShortcodeParser;
+use SilverStripe\View\Requirements;
+use SilverStripe\View\TemplateGlobalProvider;
+
 class CookiePolicy extends Extension implements TemplateGlobalProvider
 {
     /**
@@ -56,8 +67,8 @@ class CookiePolicy extends Extension implements TemplateGlobalProvider
                         links[i].addEventListener('click', function(event){
                             event.preventDefault();
                             document.cookie = 'cookie_policy=; path=/; Max-Age=-99999999;';
-                            window.location.reload(); 
-                        }); 
+                            window.location.reload();
+                        });
                     }
                 }
             ");
@@ -178,7 +189,7 @@ class CookiePolicy extends Extension implements TemplateGlobalProvider
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                
+
                   gtag('config', '".$this->siteConfig->CookiePolicyGAFallbackCode."', { 'anonymize_ip': true });
                 </script>
             ", "GTAFallbackScript");
@@ -198,9 +209,9 @@ class CookiePolicy extends Extension implements TemplateGlobalProvider
         // add colors (with # in front)
         foreach ($attributes as $key => $value)
         {
-            if ($this->siteConfig->$value) {
+            if ($this->siteConfig->{$value}) {
                 // parse the text using all shortcodeparers (for example to allow links in the content)
-                $config[$key] = $shortCodeParser->parse("{$pre}{$this->siteConfig->$value}{$post}");
+                $config[$key] = $shortCodeParser->parse("{$pre}{$this->siteConfig->{$value}}{$post}");
             }
         }
     }
