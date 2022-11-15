@@ -1,6 +1,6 @@
 ---
 Name: cookie-policy-notification
-After: 'framework/*','cms/*'
+After: 'framework/*,cms/*'
 ---
 
 Page_Controller:
