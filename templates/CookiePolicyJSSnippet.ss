@@ -13,11 +13,7 @@ function injectPolicyScript(file) {
     script.type = 'text/javascript';
     script.async = false;
     script.onload = function(){
-        if (typeof window.jQuery !== 'undefined') {
-            jQuery('body').cookieNotify($config.RAW);
-        } else if (typeof window.$ !== 'undefined') {
-            $('body').cookieNotify($config.RAW);
-        }
+        jQuery('body').cookieNotify($config.RAW);
     };
     script.src = file;
     document.getElementsByTagName('head')[0].appendChild(script);
@@ -25,6 +21,10 @@ function injectPolicyScript(file) {
 
 // init script
 function initCookiePolicy() {
+    if (typeof window.jQuery === 'undefined' && typeof window.$ !== 'undefined') {
+        window.jQuery = $;
+    }
+
     if (typeof define === 'function' && typeof require === 'function' && typeof window.jQuery === 'undefined') {
         deferJQ(function () {
             require([
