@@ -13,7 +13,11 @@ function injectPolicyScript(file) {
     script.type = 'text/javascript';
     script.async = false;
     script.onload = function(){
-        jQuery('body').cookieNotify($config.RAW);
+        if (typeof window.jQuery !== 'undefined') {
+            jQuery('body').cookieNotify($config.RAW);
+        } else if (typeof window.$ !== 'undefined') {
+            $('body').cookieNotify($config.RAW);
+        }
     };
     script.src = file;
     document.getElementsByTagName('head')[0].appendChild(script);
