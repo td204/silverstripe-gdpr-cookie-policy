@@ -5,8 +5,8 @@ After: 'framework/*,cms/*'
 
 Page_Controller:
   extensions:
-    - CookiePolicy
+    - Novatio\CookiePolicy\CookiePolicy
 
-SiteConfig:
+SilverStripe\SiteConfig\SiteConfig:
   extensions:
-    - SiteConfigCookiePolicy
+    - Novatio\CookiePolicy\SiteConfigCookiePolicy
