@@ -3,7 +3,7 @@ Name: cookie-policy-notification
 After: 'framework/*,cms/*'
 ---
 
-Page_Controller:
+PageController:
   extensions:
     - Novatio\CookiePolicy\CookiePolicy
 
