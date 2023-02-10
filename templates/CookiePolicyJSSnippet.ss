@@ -34,7 +34,7 @@ function initCookiePolicy() {
             });
         });
     } else {
-        injectPolicyScript('/cookiepolicy/javascript/jquery.cookie.policy.min.js');
+        injectPolicyScript('$resourceURL('novatio/gdpr-cookiepolicy:javascript/jquery.cookie.policy.min.js')');
     }
 }
 
