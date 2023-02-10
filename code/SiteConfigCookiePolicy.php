@@ -12,6 +12,7 @@ use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\Tab;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataExtension;
+use SilverStripe\SiteConfig\SiteConfig;
 use TractorCow\Colorpicker\Forms\ColorField;
 
 class SiteConfigCookiePolicy extends DataExtension
@@ -74,7 +75,7 @@ class SiteConfigCookiePolicy extends DataExtension
                 ->setDescription(_t('CookiePolicy.GAFALLBACKDESCR', "Used when visitor has not accepted cookies."))
                 ->displayIf('CookiePolicyIncludeGTM')->isChecked()->end(),
             DropdownField::create("CookiePolicyPosition")
-                ->setSource(singleton('SiteConfig')->dbObject('CookiePolicyPosition')->enumValues())
+                ->setSource(singleton(SiteConfig::class)->dbObject('CookiePolicyPosition')->enumValues())
                 ->setTitle(_t('CookiePolicy.POSITION', "Position"))
                 ->setDescription('Default: top'),
             HtmlEditorField::create("CookiePolicyDescription")
