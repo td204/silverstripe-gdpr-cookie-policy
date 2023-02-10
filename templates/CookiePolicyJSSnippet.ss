@@ -24,10 +24,10 @@ function initCookiePolicy() {
     if (typeof define === 'function' && typeof require === 'function' && typeof window.jQuery === 'undefined') {
         deferJQ(function () {
             require([
-                '/cookiepolicy/javascript/jquery.cookie.min.js'
+                '$resourceURL('novatio/gdpr-cookiepolicy:javascript/jquery.cookie.min.js')'
             ], function(cookie) {
                 require([
-                    '/cookiepolicy/javascript/jquery.policy.min.js'
+                    '$resourceURL('novatio/gdpr-cookiepolicy:javascript/jquery.policy.min.js')'
                 ], function (policy) {
                     jQuery('body').cookieNotify($config.RAW);
                 });
